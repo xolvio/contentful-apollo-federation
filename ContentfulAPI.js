@@ -5,6 +5,11 @@ const apollo_datasource_http_1 = require("apollo-datasource-http");
 class ContentfulAPI extends apollo_datasource_http_1.HTTPDataSource {
     _space;
     _accessToken;
+    /**
+     * @param options
+     * @param options.space The Contentful space id.
+     * @param options.accessToken The Contentful API access token.
+     */
     constructor({ space, accessToken }) {
         super('https://graphql.contentful.com');
         this._space = space;

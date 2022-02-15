@@ -9,6 +9,15 @@ interface CreateContentfulServerOptions {
     additionalResolvers?: any;
     contentfulAPI?: any;
 }
+/**
+ * @param options The options for the creation of the Apollo Federation enabled Contentful server.
+ * @param options.space The Contentful space id.
+ * @param options.accessToken The Contentful API access token.
+ * @param options.schemaAdditions Additional GraphQL schema definitions.
+ * @param options.modifySchema A function that receives the AST of the Contentful GraphQL schema, which can modify the schema.
+ * @param options.additionalResolvers Additional Apollo Server resolvers for the Apollo server.
+ * @param options.contentfulAPI An instance of the ContentfulAPI or a subclass, which allows adding additional methods to it.
+ */
 export declare function createApolloFederationEnabledContentfulServer({ space, accessToken, schemaAdditions, modifySchema, additionalResolvers, contentfulAPI }: CreateContentfulServerOptions): Promise<{
     server: ApolloServer;
     schema: string;

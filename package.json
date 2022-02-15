@@ -1,6 +1,6 @@
 {
   "name": "contentful-apollo-federation",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "type": "commonjs",
   "description": "Enabling the Contentful GraphQL API for Apollo Federation",
   "keywords": [

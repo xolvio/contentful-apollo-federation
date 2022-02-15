@@ -1,10 +1,14 @@
 import { HTTPDataSource } from 'apollo-datasource-http'
-import { verifyThatContentfulEnvironmentVariablesAreSet } from './verifyThatContentfulEnvironmentVariablesAreSet.js'
 
 export class ContentfulAPI extends HTTPDataSource {
   _space: string
   _accessToken: string
 
+  /**
+   * @param options
+   * @param options.space The Contentful space id.
+   * @param options.accessToken The Contentful API access token.
+   */
   constructor({space, accessToken}: {space: string, accessToken: string}) {
     super('https://graphql.contentful.com')
     this._space = space
@@ -12,8 +16,6 @@ export class ContentfulAPI extends HTTPDataSource {
   }
 
   async query(query: string) {
-    verifyThatContentfulEnvironmentVariablesAreSet()
-
     return this.post(
       `/content/v1/spaces/${ this._space }`, {
         query: {

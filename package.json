@@ -10,7 +10,7 @@
     "Apollo"
   ],
   "homepage": "https://github.com/xolvio/contentful-apollo-federation",
-  "license": "",
+  "license": "MIT",
   "main": "./index.js",
   "repository": {
     "type": "git",
